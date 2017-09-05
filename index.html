@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}		
+			body{
+				background: #AFD9EE;
+			}	
+			#box {
+				width: 300px;
+				height: 300px;
+				margin: 150px auto;				
+				transform-style: preserve-3d;
+				transform: perspective(1200px) rotateY(-45deg) rotateX(30deg);
+			}			
+			#box div {
+				width: 300px;
+				height: 300px;
+				border-radius: 20px;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}			
+			#front {
+				transform: translateZ(150px);
+			}			
+			#back {
+				transform: translateZ(-150px);
+			}			
+			#left {
+				transform: translateX(-150px) rotateY(90deg);
+			}			
+			#right {
+				transform: translateX(150px) rotateY(90deg);
+			}			
+			#top {
+				transform: translateY(-150px) rotateX(90deg);
+			}			
+			#bottom {
+				transform: translateY(150px) rotateX(90deg);
+			}			
+			@keyframes changeMore {
+				from {
+					transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+				}
+				to {
+					transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg);
+				}
+			}			
+			#box {
+				animation: 4s changeMore linear infinite;
+			}			
+			#box:hover {
+				animation: 3s changeMore ease infinite;
+			}				
+			iframe {
+				border-radius: 12px;
+				width: 96px;
+				height: 96px;
+			}
+		</style>
+		<script src="jquery.min.js"></script>
+		<script>
+			$(function() {
+				function random(n, m) {
+					return Math.floor(Math.random() * (m - n) + n);
+				};
+				function randoms(n, m) {
+					return parseFloat(Math.random() * (m - n) + n);
+				};
+				var oBox = $('#box');
+				var aDiv = $('#box div')
+				var aIframe = $('#box div iframe')
+				setInterval(function(){
+					for(var i = 0; i < aDiv.length; i++) {
+						aDiv.eq(i).css('background', 'rgba(' + random(0, 266) + ',' + random(0, 266) + ',' + random(0, 266) + ',' + randoms(0.1, 0.4) + ')');
+					}
+					for(var i = 0; i < aIframe.length; i++) {
+						aIframe.eq(i).css('background', 'rgba(' + random(0, 266) + ',' + random(0, 266) + ',' + random(0, 266) + ',' + randoms(0.6, 0.9) + ')');
+					}
+				}, 500);
+			});
+		</script>
+	</head>
+	<body>
+		<div id='box'>
+			<div id='front'>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+			</div>
+			<div id='back'>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+			</div>
+			<div id='left'>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+			</div>
+			<div id='right'>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+			</div>
+			<div id='top'>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+			</div>
+			<div id='bottom'>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+				<iframe frameborder="0"></iframe>
+			</div>
+		</div>
+	</body>
+</html>
